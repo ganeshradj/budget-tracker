@@ -1,0 +1,33 @@
+{
+  "name": "budget-tracker-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "seed": "npx sequelize-cli db:seed:all",
+    "dev": "npx nodemon index.js",
+    "start": "NODE_ENV=production npm run migrate:up && node index.js",
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:down": "npx sequelize-cli db:migrate:undo",
+    "migrate:undo:all": "npx sequelize-cli db:migrate:undo:all",
+    "seed:all": "npx sequelize-cli db:seed:all",
+    "seed:undo:all": "npx sequelize-cli db:seed:undo:all",
+    "refresh-database": "npm run migrate:undo:all && npm run migrate:up && npm run seed:all"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "0x": "^4.9.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-bearer-token": "^2.4.0",
+    "helmet": "^3.23.0",
+    "loadash": "^1.0.0",
+    "moment": "^2.26.0",
+    "pg": "^8.2.1",
+    "sequelize": "^5.21.12",
+    "uuid": "^8.1.0"
+  }
+}

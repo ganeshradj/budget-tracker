@@ -1,0 +1,12 @@
+
+const path = require('path');
+const {
+  DB: { DB_CONNECTION },
+} = require('./config');
+
+module.exports = {
+  'url': DB_CONNECTION,
+  'migrations-path': path.resolve('./database', 'migrations'),
+  'models-path':     path.resolve('./database', 'tables'),
+  'seeders-path': path.resolve('./database', 'seeders'),
+}
